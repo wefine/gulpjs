@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE translationbundle><translationbundle lang="en">
+  <translation id="6783150167357318030" key="MSG_ACTION_BAR_DELETE_TOOLTIP" desc="Generic &quot;Delete some resource&quot; tooltip text which appears over the delete icon on the global action bar.">Delete <ph name="RESOURCE_NAME"/></translation>
+    <translation id="58035047264145239" key="MSG_TIME_UNIT_YEAR_LABEL" desc="Time units label, a single year.">a year</translation>
+  <translation id="4037658160328783864" key="MSG_UNKNOWN_SERVER_ERROR" desc="String to display when error object has invalid structure.">Unknown Server Error</translation>
+  <translation id="4302564966959880468" key="MSG_WORKLOADS_WORKLOADS_0" desc="Title for graph card displaying CPU metric of one all resources.">CPU usage</translation>
+  <translation id="1036433586363793837" key="MSG_WORKLOADS_WORKLOADS_1" desc="Title for graph card displaying memory metric of one all resources.">Memory usage</translation>
+  <translation id="5680064618107855853" key="MSG_WORKLOADS_WORKLOADS_2" desc="Help message detailing what is included in the memory usage">The memory usage includes the caches in the pods managed by these resources. (Does not count pods double because it is mentioned both in the pod list and its controller is mentioned in e.g. a replica set.)</translation>
+</translationbundle>
