@@ -49,3 +49,40 @@ gulp.task('watch', function () {
     // dist目录下文件有改动就会浏览器刷新
     gulp.watch(['dist/**/*.*']).on('change', livereload.changed);
 });
+
+gulp.task('hello', function () {
+    console.log("hello");
+});
+
+var cheerio = require('gulp-cheerio');
+var prevMsgs = {};
+gulp.task('cheerio', function () {
+    return gulp
+        .src('messages-en.xtb')
+        .pipe(cheerio(function ($) {
+            $('translation').each(function (i, translation) {
+                var key = $(translation).attr('key');
+
+                var index = key.lastIndexOf('_');
+                if (index !== -1) {
+                    var lastpart = key.substring(index + 1);
+                    console.log(lastpart);
+                    if (/^[0-9]+$/.test(lastpart)) {
+                        var indexSuffix = Number(lastpart);
+                        var filePrefix = key.substring(0, index);
+                        if (!prevMsgs[filePrefix]) {
+                            prevMsgs[filePrefix] = [];
+                        }
+                        prevMsgs[filePrefix].push({
+                            index: indexSuffix,
+                            key: key,
+                            text: $(translation).text(),
+                            desc: $(translation).attr('desc'),
+                            used: false
+                        });
+                    }
+                }
+
+            })
+        }));
+});
